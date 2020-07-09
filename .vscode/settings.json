@@ -1,0 +1,13 @@
+{
+  "python.pythonPath": "D:\\Python38-64\\python.exe",
+  "python.pydev.java.home": "C:\\Program Files\\Java\\jdk-14.0.1\\bin",
+  //"java.home": "C:\\Program Files (x86)\\Java\\jre1.8.0_251\\bin",
+  "java.home": "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+  "python.formatting.autopep8Path": "D:\\Python38-64\\lib\\site-packages\\autopep8.py",
+  "python.formatting.autopep8Args": [
+    "--max-line-length",
+    "70",
+    "--aggressive",
+    "--aggressive"
+  ]
+}
