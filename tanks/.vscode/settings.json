@@ -1,0 +1,11 @@
+{
+    "editor.defaultFormatter": "ms-python.python",
+    "python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=lxml",  // The extension is "lxml" not "1xml"
+    "--errors-only",
+    "--generate-members"
+],
+"python.linting.pylintEnabled": false,
+"python.linting.flake8Enabled": true,
+"python.linting.enabled": true
+}
