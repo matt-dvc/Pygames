@@ -25,8 +25,11 @@ class Game:
     def new(self):
         # self.playerList = []
         self.all_sprittes = pg.sprite.Group()
-        self.player = sp.Player()
-        self.all_sprittes.add(self.player)
+        self.all_bullets = pg.sprite.Group()
+        self.player1 = sp.Player1()
+        self.player2 = sp.Player2()
+        self.all_sprittes.add(self.player1)
+        self.all_sprittes.add(self.player2)
         # self.circlePlayer = sp.CirclePlayer(self.win)
         # self.all_sprittes.add(self.circlePlayer)
         # print(self.playerList)
@@ -34,6 +37,14 @@ class Game:
 
     def update(self):
         self.all_sprittes.update()
+        self.all_bullets.update()
+        print(len(sp.bullets))
+        print(len(self.all_bullets))
+        for bullet in sp.bullets:
+            self.all_bullets.add(bullet)
+            if len(sp.bullets) > 20:
+                sp.bullets.pop(0)
+                self.all_bullets.remove(bullet)
 
     def events(self):
         for event in pg.event.get():
@@ -47,12 +58,13 @@ class Game:
     def draw(self):
         self.win.fill(se.BLACK)
         self.all_sprittes.draw(self.win)
-        self.x += 1
-        if self.x > se.displayWidth:
-            self.x = 0
-            self.win.fill(se.BLACK)
-        pg.draw.circle(self.win, se.WHITE,
-                       (self.x, int(100*self.player.vel.length())), 10)
+        self.all_bullets.draw(self.win)
+        # self.x += 1
+        # if self.x > se.displayWidth:
+        #     self.x = 0
+        #     self.win.fill(se.BLACK)
+        # pg.draw.circle(self.win, se.WHITE,
+        #                (self.x, int(50*self.player.vel.length())), 10)
         # for circlePlayer in self.playerList:
         #    circlePlayer.update()
         #    print(circlePlayer.pos, circlePlayer.vel, circlePlayer.acc)
